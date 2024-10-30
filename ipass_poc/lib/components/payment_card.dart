@@ -14,35 +14,38 @@ class PaymentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Container(
-          width: 50,
-          height: 50,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Icon(icon, color: Colors.white),
-        ),
-        const SizedBox(width: 16),
-        Expanded(
-          child: Container(
-            height: 50, // Match height with icon container
-            padding: const EdgeInsets.only(
-                top: 12), // Adjust this value to vertically align the text
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: <Widget>[
+          Container(
+            width: 50,
+            height: 50,
             decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.grey.shade300,
-                  width: 1,
+              color: color,
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Icon(icon, color: Colors.white),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Container(
+              height: 50, // Match height with icon container
+              padding: const EdgeInsets.only(
+                  top: 12), // Adjust this value to vertically align the text
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.grey.shade300,
+                    width: 1,
+                  ),
                 ),
               ),
+              child: Text(title, style: const TextStyle(fontSize: 16)),
             ),
-            child: Text(title, style: const TextStyle(fontSize: 16)),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ipass_poc/components/payment_card.dart';
 
+import 'mutuelle/page.dart';
+
 class MakePayments extends StatelessWidget {
   const MakePayments({super.key});
 
@@ -31,7 +33,11 @@ class MakePayments extends StatelessWidget {
                 color: Color(0xFF9C8BFF),
                 icon: FontAwesomeIcons.starOfLife,
                 onTap: () {
-                  // Handle community health insurance payment
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MutuellePage()),
+                  );
                 },
               ),
             ],
