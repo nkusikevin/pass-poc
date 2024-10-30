@@ -1,0 +1,1 @@
+ /Users/kevinnkusi/Desktop/work/dart101/ipass_poc/.dart_tool/flutter_build/814009c78c90b32d2dafde9ced22d150/native_assets.yaml: 
