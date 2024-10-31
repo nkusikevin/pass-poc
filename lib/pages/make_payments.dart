@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ipass_poc/components/payment_card.dart';
+import 'package:ipass_poc/pages/traffic/page.dart';
 
 import 'mutuelle/page.dart';
 
@@ -24,7 +25,11 @@ class MakePayments extends StatelessWidget {
                 icon: FontAwesomeIcons.ticket,
                 color: Color(0xFF2684FF),
                 onTap: () {
-                  // Handle traffic fine payment
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TrafficFines()),
+                  );
                 },
               ),
               const SizedBox(height: 16.0),

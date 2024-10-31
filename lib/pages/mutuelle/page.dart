@@ -50,8 +50,7 @@ class MutuellePage extends StatelessWidget {
                     {
                       "key": "AMOUNT",
                       "type": "custom-input",
-                     "hideExpression":
-                          "model.NID_NUMBER == null || model.NID_NUMBER.trim().isEmpty",
+                      "hideExpression": "model.NID_NUMBER == null",
                       "templateOptions": {
                         "required": true,
                         "textlabel": "Amount to pay",
