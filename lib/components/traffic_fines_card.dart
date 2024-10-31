@@ -7,20 +7,24 @@ class TrafficFinesCard extends StatefulWidget {
   final String vehicleNumber;
   final double amount;
   final DateTime dueDate;
+  final DateTime dateTime;
   final int speed;
   final String location;
   final String imageUrl;
   final bool isSelected;
   final Function(String, bool, double) onSelected;
-  const TrafficFinesCard({super.key ,  required this.offense,
+  const TrafficFinesCard({
+    super.key,
+    required this.offense,
     required this.vehicleNumber,
     required this.amount,
     required this.fineId,
     required this.dueDate,
+    required this.dateTime,
     required this.speed,
     required this.location,
     required this.imageUrl,
-      required this.isSelected,
+    required this.isSelected,
     required this.onSelected,
   });
 
@@ -80,7 +84,7 @@ class _TrafficFinesCardState extends State<TrafficFinesCard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                     Text(
+                    Text(
                       widget.offense,
                       style: const TextStyle(
                         fontSize: 16,
@@ -89,7 +93,7 @@ class _TrafficFinesCardState extends State<TrafficFinesCard> {
                       ),
                     ),
                     const SizedBox(height: 4),
-                     Text(
+                    Text(
                       widget.vehicleNumber,
                       style: const TextStyle(
                         fontSize: 15,
@@ -126,7 +130,7 @@ class _TrafficFinesCardState extends State<TrafficFinesCard> {
                   ],
                 ),
               ),
-               Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Text(
@@ -175,7 +179,7 @@ class _TrafficFinesCardState extends State<TrafficFinesCard> {
                                   color: Colors.grey[700],
                                 ),
                               ),
-                               TextSpan(
+                              TextSpan(
                                 text: widget.offense,
                                 style: const TextStyle(
                                   fontSize: 16,
@@ -196,7 +200,7 @@ class _TrafficFinesCardState extends State<TrafficFinesCard> {
                                   color: Colors.grey[700],
                                 ),
                               ),
-                               TextSpan(
+                              TextSpan(
                                 text: '${widget.speed} KM/H',
                                 style: const TextStyle(
                                   fontSize: 15,
@@ -217,9 +221,30 @@ class _TrafficFinesCardState extends State<TrafficFinesCard> {
                                   color: Colors.grey[700],
                                 ),
                               ),
-                               TextSpan(
-                                text: widget.location ,
-                                style:const  TextStyle(
+                              TextSpan(
+                                text: widget.location,
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'When: ',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.grey[700],
+                                ),
+                              ),
+                              TextSpan(
+                                text: '${widget.dateTime.day}/${widget.dateTime.month}/${widget.dateTime.year}',
+                                style: const TextStyle(
                                   fontSize: 15,
                                   color: Colors.black,
                                 ),
@@ -238,8 +263,9 @@ class _TrafficFinesCardState extends State<TrafficFinesCard> {
                                   color: Colors.grey[700],
                                 ),
                               ),
-                               TextSpan(
-                                text: '${widget.dueDate.day}/${widget.dueDate.month}/${widget.dueDate.year}',
+                              TextSpan(
+                                text:
+                                    '${widget.dueDate.day}/${widget.dueDate.month}/${widget.dueDate.year}',
                                 style: const TextStyle(
                                   fontSize: 15,
                                   color: Colors.black,

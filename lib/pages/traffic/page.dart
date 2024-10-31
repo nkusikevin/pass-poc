@@ -53,7 +53,8 @@ class _TrafficFinesState extends State<TrafficFines> {
                     offense: 'Over Speeding',
                     vehicleNumber: 'RAD 123 A',
                     amount: 25000,
-                    dueDate: DateTime(2024, 01, 25, 20, 0),
+                    dueDate: DateTime(2024, 01, 30, 20, 0),
+                    dateTime: DateTime(2024, 01, 25, 20, 0),
                     speed: 60,
                     location: 'Nyarutarama, Green Hills Academy',
                     imageUrl: 'assets/images/car.jpg',
@@ -64,6 +65,7 @@ class _TrafficFinesState extends State<TrafficFines> {
                 },
               ),
             ),
+            const SizedBox(height: 16),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -96,6 +98,7 @@ class _TrafficFinesState extends State<TrafficFines> {
                 ],
               ),
             ),
+            
             TextButton(
               onPressed: () {},
               child: Container(
