@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'pages/home_page.dart';
-import 'pages/profile.dart';
+import 'pages/profile/profile.dart';
 import 'pages/updates.dart';
 
 class MyAppView extends StatefulWidget {
