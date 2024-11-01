@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ipass_poc/components/popup.dart';
+import 'package:ipass_poc/pages/languages/page.dart';
 import 'package:ipass_poc/pages/profile/my_info.dart';
+
+import '../privacy/page.dart';
+import 'payment_hist.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -28,7 +33,7 @@ class Profile extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) =>  MyInfo()),
+                MaterialPageRoute(builder: (context) => MyInfo()),
               );
             },
           ),
@@ -40,7 +45,12 @@ class Profile extends StatelessWidget {
           _buildListTile(
             icon: CupertinoIcons.tray_arrow_down,
             title: 'Application History',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PaymentHistory()),
+              );
+            },
           ),
           _buildListTile(
             icon: FontAwesomeIcons.handHoldingDollar,
@@ -63,7 +73,13 @@ class Profile extends StatelessWidget {
           _buildListTile(
             icon: CupertinoIcons.lock,
             title: 'Privacy & Security',
-            onTap: () {},
+            onTap: () {
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PrivacySettings()),
+              );
+            },
           ),
           const SizedBox(height: 24.0),
           const Text(
@@ -76,7 +92,12 @@ class Profile extends StatelessWidget {
           _buildListTile(
             icon: Icons.language,
             title: 'Language',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChangeLanguage()),
+              );
+            },
           ),
           _buildListTile(
             icon: CupertinoIcons.question_circle,
@@ -88,7 +109,28 @@ class Profile extends StatelessWidget {
             icon: Icons.logout,
             title: 'Logout',
             textColor: Colors.red,
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => CustomPopup(
+                  title: 'Logout',
+                  message: 'Are you sure you\'d  like to logout ?',
+                  primaryButtonText: 'Yes, Logout',
+                  onPrimaryButtonPressed: () {
+                    Navigator.pop(context);
+                  },
+                  secondaryButtonText: 'cancel',
+                  onSecondaryButtonPressed: () {
+                    Navigator.pop(context);
+                  },
+                  primaryButtonColor: Color(0xFFDF1F07),
+                  iconData: FontAwesomeIcons.exclamation,
+                  icon: const Icon(FontAwesomeIcons.exclamation),
+                  iconColor: Colors.white,
+                  iconBackgroundColor: const Color(0xFFF77402),
+                ),
+              );
+            },
           ),
           const SizedBox(height: 8.0),
           const Center(

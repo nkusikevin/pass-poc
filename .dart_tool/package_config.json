@@ -104,6 +104,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///Users/kevinnkusi/.pub-cache/hosted/pub.dev/intl-0.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///Users/kevinnkusi/.pub-cache/hosted/pub.dev/leak_tracker-10.0.5",
       "packageUri": "lib/",
@@ -254,7 +260,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-10-31T13:57:03.904910Z",
+  "generated": "2024-11-01T09:28:49.892917Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/kevinnkusi/Developer/flutter",
