@@ -5,6 +5,7 @@ import 'package:ipass_poc/components/popup.dart';
 import 'package:ipass_poc/pages/languages/page.dart';
 import 'package:ipass_poc/pages/profile/my_info.dart';
 
+import '../application history/page.dart';
 import '../privacy/page.dart';
 import 'payment_hist.dart';
 
@@ -48,14 +49,19 @@ class Profile extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PaymentHistory()),
+                MaterialPageRoute(builder: (context) => ApplicationHistory()),
               );
             },
           ),
           _buildListTile(
             icon: FontAwesomeIcons.handHoldingDollar,
             title: 'Payment History',
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PaymentHistory()),
+              );
+            },
           ),
           const SizedBox(height: 24.0),
           const Text(
